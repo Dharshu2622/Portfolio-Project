@@ -1,0 +1,313 @@
+.sub-title{
+    text-align:center;
+    font-size:60px;
+    padding-bottom:70px;
+    padding-top:10px;
+}
+ .sub-title span{
+    color:#0ef;
+}
+section{
+    display:block;
+    justify-content: space-between;
+}
+ .container1{
+    width:600px;
+    height:700px;
+    margin-left:70px;
+}
+ .heading{
+    text-align: center;
+    text-decoration:underline;
+    text-underline-offset:10px;
+    text-decoration-thickness:5px;
+    margin-bottom:50px;
+    font-size:45px;
+}
+.box{
+    position: relative;
+    margin: 10px 0;
+    flex: 1 1 15rem;
+}
+.box .text{
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+}
+.box .text big{
+    font: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+
+}
+.box .text small{
+    display: block;
+    font-weight: 600;
+}
+
+.bar{
+    font-size:23px;
+}
+.technical-bars.bar{
+    margin:40px 0;
+    justify-content: space-between;
+}    
+.technical-bars.bar:first-child{
+    margin-top:0;
+}
+.technical-bars.bar:last-child{
+    margin-bottom:0;
+}
+.technical-bars.bar.info{
+    margin-bottom:5px;
+}
+.technical-bars.bar.info span{
+    font-size:17px;
+    font-weight:500;
+    animation:showText 0.5s is linear forwards;
+    opacity:0;
+}
+/* skills section css */
+.skills{
+    background:skyblue;
+}
+.skill-main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-row-gap:30px;
+    grid-column-gap: 50px;
+}
+.skill-bar{
+    margin-bottom: 2.3rem;
+}
+.skill-main h3{
+    margin-bottom: 2rem;
+    font-size: var(--normal-font);
+    text-align: center;
+}
+.skill-left .skill-bar .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 10px ;
+}
+.skill-left .skill-bar .bar{
+    width: 100%;
+    height: 10px;
+    background-color:white;
+    border-radius: 25px;
+    margin-top: 10px;
+    position: relative;
+
+}
+.skill-bar .bar span{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background:skyblue;
+    border-radius: 25px;
+    box-shadow:0 0 50px skyblue;
+}
+.skill-bar .bar .html{
+    width: 80%;
+    animation: html 2s;
+}
+.skill-bar .bar .java{
+    width: 70%;
+    animation: java 3s;
+}
+.skill-bar .bar .javascript{
+    width: 72%;
+    animation: javascript 4s ;
+}
+.skill-bar .bar .python{
+    width: 68%;
+    animation: python 5s;
+}
+.skill-bar .bar .figma{
+    width: 90%;
+    animation: figma 6s;
+}
+.skill-bar .bar .mysql{
+    width: 81%;
+    animation:mysql 7s;
+}
+.professional{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.circle{
+    width: 180px;
+    height: 180px;
+    margin-left: 80px;
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: glitter 1s linear infinite;
+    border-radius: 50%;
+} 
+ 
+.circle .points{
+    width: 2px;
+    height: 10px;
+    background-color:skyblue;
+    position: absolute;
+    border-radius: 3px;
+    transform: rotate(calc(var(--i)*var(--rot))) translateY(-45px);
+   
+}
+
+
+
+.points.marked{
+    animation: glow 0.04s linear forwards;
+    animation-delay: calc(var(--i)*0.05s);
+}
+.professional{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.box{
+    position: relative;
+    margin: 10px 0;
+    flex: 1 1 15rem;
+}
+.box .text{
+    text-align: center;
+
+
+    color: #fff;
+    font-size: 1rem;
+}
+.box .text big{
+    font: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+
+}
+.box .text small{
+    display: block;
+    font-weight: 600;
+}
+
+.points.marked{
+    animation: glow 0.04s linear forwards;
+    animation-delay: calc(var(--i)*0.05s);
+}
+  
+.technical-bars.bar.progress-line{
+    position: absolute;
+    border-radius: 100px;
+    width:100%;
+    height:10px;
+    background-color:white;
+    animation:animate is cubic-bezier(1,0,0,5,1) forwards;
+    transform:scaleX(0);
+    transform-origin:left;
+} 
+
+@keyframes animate{
+    100%{
+        transform:scaleX(1);
+    }
+}
+.technical-bars.bar.progress-line span{
+    height:100%;
+    background-color: aqua;
+    position: absolute;
+}  
+.indfo{
+    padding-bottom:20px;
+}
+.progress-line{
+width:100px;
+background: rgba(131, 30, 30, 0.6);
+height:20px;
+z-index:-1;
+border-radius:100px;
+position:relative;
+margin-bottom:20px;
+}
+.progress-line{
+    background:skyblue;
+    height:20px;
+    border-radius:100px;
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    padding-right:30px;
+    overflow: hidden;
+    
+}
+.html{
+    animation: html 2s;
+    width:87%;
+}
+.css{
+    animation:css 2s;
+    width:87%;
+}
+.javascript{
+    animation:javascript 2s;
+    width:80%;
+}
+.python{
+    animation:python 2s;
+    width:80%;
+}
+.react{
+    animation:react 2s;
+    width:70%;
+}
+@keyframes html{
+    from{
+        width:0;
+    }
+    to{
+        width:87%;
+    }
+
+}
+@keyframes html{
+    from{
+        width:0;
+    }
+    to{
+        width:87%;
+    }
+}
+    @keyframes html{
+        from{
+            width:0;
+        }
+        to{
+            width:80%;
+        }
+    }
+
+        @keyframes html{
+            from{
+                width:0;
+            }
+            to{
+                width:80%;
+            }
+        }
+
+            @keyframes html{
+                from{
+                    width:0;
+                }
+                to{
+                    width:70%;
+                }
+             }

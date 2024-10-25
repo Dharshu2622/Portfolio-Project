@@ -1,0 +1,30 @@
+.services{
+    width: 100%;
+    height: 100vh;
+}
+.services-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-gap:20px;
+    margin-top:30px;
+    height:300px;
+}
+.services-list div{
+    background-color:transparent;
+    padding:50px;
+    font-size:15px;
+    font-weight:15px;
+    border-right:20px; 
+    border-radius:25px;
+    color:rgb(44, 138, 4);
+    transition:background 0.5s,transform 0.5s;
+    box-shadow: 0 0 50px skyblue;
+    animation: animate 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    height:400px;
+    width:250px;
+}
+h2{
+    font-size: 25px;
+    font-weight:500;
+    margin-bottom:15px;
+}
