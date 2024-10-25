@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment7</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: blue;
+    }
+    .face {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-color: yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .face::before {
+        content: '';
+        position: absolute;
+        top: 200px;
+        width: 150px;
+        height: 70px;
+        background-color:brown;
+        border-bottom-left-radius: 70px;
+        border-bottom-right-radius: 70px;
+    }
+    .eyes {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-around; /* Align eyes along the x-axis */
+        width: 100%;
+    }
+    .eye {
+        width: 100px; /* Adjust  size of white background of eyes */
+        height: 90px; /* Adjust  size of  white background of eyes */
+        background: #fff;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+    }
+    .ball {
+        width: 40px; /* Adjust  size of  black balls */
+        height: 40px; /* Adjust  size of  black balls */
+        background: #000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 8px solid #333;
+    }
+    </style>
+</head>
+<body>
+    <div class="face">
+        <div class="eyes">
+            <div class="eye">
+                <div class="ball"></div>
+            </div>
+            <div class="eye">
+                <div class="ball"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var balls=document.getElementsByClassName("ball");
+    document.onmousemove=function(event) {
+        let x=(event.clientX*100)/window.innerWidth + "%";//event.clientX; Horizontal
+                       //convert the X-coordinate from a pixel-based value (the default unit) to a percentage-based value.                                       
+        let y=(event.clientY*100)/window.innerHeight + "%";// event.clientY; Vertical
+        for (let i=0;i<balls.length;i++) {
+            balls[i].style.left =x;
+            balls[i].style.top =y;
+            balls[i].style.transform ="translate(-"+x+",-"+y+")";
+        }
+    }
+    </script>
+</body>
+</html>

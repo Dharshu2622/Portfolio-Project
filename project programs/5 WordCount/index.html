@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count Table</title>
+</head>
+<body>
+    <script>
+        let text = "In the starter code, some comments start with the words TO DO! This is where you could add your lines of codes to solve this assignment. The words will need to be scrubbed of any punctuation. To do so, you may choose to use regex and replace, or you may choose to get rid of any punctuation marks another way. It is up to you! Watch out for casing. The JavaScript compiler does not think a lowercase and an uppercase letter are the same letter the way humans do. To avoid this, set the entire string to be in lowercase.";
+        let result = text.toLowerCase();
+        function replacePunctuation(str) {
+            return str.replace(/[,.!"']/g, ''); 
+        }
+        result = replacePunctuation(result);
+        let split = result.split(" ");
+        let obj = {};
+        
+        for (let i = 0; i < split.length; i++) {
+            if (obj[split[i]] === undefined) {
+                obj[split[i]] = 1; 
+            } else {
+                obj[split[i]]++; 
+            }
+        }
+        console.log(obj)
+
+        let wordCountArray = Object.entries(obj);
+        wordCountArray.sort((a, b) => b[1] - a[1]); 
+        let top5Words = wordCountArray.slice(0, 5);
+        let tableHTML = "<table border='1'><tr><th>Word</th><th>Count</th></tr>";
+        top5Words.forEach(([word, count]) => {
+            tableHTML += `<tr><td>${word}</td><td>${count}</td></tr>`;
+        });
+        tableHTML += "</table>";
+        document.body.innerHTML += tableHTML;
+
+    </script>
+</body>
+</html>

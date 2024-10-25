@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Balls</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; 
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var balls = [];
+        var xpos = [];
+        var ypos = [];
+        var xvel = [];
+        var yvel = [];
+        var ballSize = 30; 
+
+        function create() {
+           for (let i = 0; i < 3; i++) { 
+                let x = randomX();
+                let y = randomY();
+                let xvell = randomVel();
+                let yvell = randomVel();
+                let color = randomColor();
+                var div = document.createElement("div");
+                div.style.height = div.style.width = ballSize + "px";
+                div.style.position = "absolute";
+                div.style.borderRadius = "50%";
+                div.style.top = y + 'px';
+                div.style.left = x + 'px';
+                div.style.background = color;
+                document.body.appendChild(div);
+                balls.push(div);
+                xpos.push(x);
+                ypos.push(y);
+                xvel.push(xvell);
+                yvel.push(yvell);
+            }
+            console.log(balls, xpos, ypos);
+         } 
+
+        function randomX() {
+            return Math.random() * 600;
+        }
+
+        function randomY() {
+            return Math.random() *600;
+        }
+
+        function randomColor() {
+            let palette = ['black', 'yellow', 'blue'];
+            return palette[Math.floor(Math.random() * palette.length)];
+        }
+
+        function randomVel() {
+            return Math.floor(Math.random() * 10) - 5;
+        }
+
+        function move() {
+            for (let i = 0; i < balls.length; i++) {
+                xpos[i] += xvel[i];
+                ypos[i] += yvel[i];
+
+                if (xpos[i] <= 0 || xpos[i] >= window.innerWidth - ballSize) {
+                    xvel[i] *= -1;
+                }
+                if (ypos[i] <= 0 || ypos[i] >= window.innerHeight - ballSize) {
+                    yvel[i] *= -1;
+                }
+
+                xpos[i] = Math.max(0, Math.min(xpos[i], window.innerWidth - ballSize));
+                ypos[i] = Math.max(0, Math.min(ypos[i], window.innerHeight - ballSize));
+
+                balls[i].style.left = xpos[i] + 'px';
+                balls[i].style.top = ypos[i] + 'px';
+            }
+            requestAnimationFrame(move); 
+        }
+
+
+        create();
+        move(); 
+    </script>
+</body>
+</html>
